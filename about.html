@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Cryptoholic</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+    <canvas id="background-canvas"></canvas>
+    
+    <nav class="fixed w-full z-50 bg-opacity-90 bg-black">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold">Cryptoholic</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="domains.html" class="nav-link">Domains</a>
+                    <a href="rewards.html" class="nav-link">Rewards</a>
+                    <a href="community.html" class="nav-link">Community</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <section class="min-h-screen relative">
+            <div class="container mx-auto px-6 py-24 relative z-10">
+                <h1 class="text-5xl font-bold mb-12 animate-fade-in">About Cryptoholic</h1>
+                
+                <div class="grid md:grid-cols-2 gap-12 mb-24">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+                        <p class="text-lg mb-6">
+                            Cryptoholic emerged as India's pioneering decentralized Web 3.0 society, 
+                            with a vision to bridge the gap between traditional technology education 
+                            and the evolving landscape of blockchain, AI, and metaverse technologies.
+                        </p>
+                        <p class="text-lg mb-6">
+                            Founded by passionate tech enthusiasts, we've created a vibrant community 
+                            where innovation meets education, enabling the next generation of tech leaders 
+                            to thrive in the decentralized future.
+                        </p>
+                    </div>
+                    <div class="model-container" data-model="about-story">
+                        <!-- 3D model will be rendered here -->
+                    </div>
+                </div>
+
+                <div class="mb-24">
+                    <h2 class="text-3xl font-bold mb-12 text-center">Our Core Values</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="feature-card">
+                            <h3 class="text-2xl font-bold mb-4">Innovation</h3>
+                            <p>Embracing cutting-edge technologies and fostering creative solutions in the Web 3.0 space.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3 class="text-2xl font-bold mb-4">Community</h3>
+                            <p>Building a supportive ecosystem where members can learn, grow, and collaborate together.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3 class="text-2xl font-bold mb-4">Excellence</h3>
+                            <p>Striving for the highest standards in education, mentorship, and technological advancement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-24">
+                    <h2 class="text-3xl font-bold mb-12">Our Achievements</h2>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="model-container" data-model="achievements">
+                            <!-- 3D model will be rendered here -->
+                        </div>
+                        <div class="space-y-6">
+                            <div class="achievement-card p-6 bg-opacity-20 bg-blue-900 rounded-lg">
+                                <h3 class="text-xl font-bold mb-2">Educational Impact</h3>
+                                <p>Successfully launched multiple educational initiatives engaging thousands of students.</p>
+                            </div>
+                            <div class="achievement-card p-6 bg-opacity-20 bg-blue-900 rounded-lg">
+                                <h3 class="text-xl font-bold mb-2">Industry Partnerships</h3>
+                                <p>Established collaborations with leading Web 3.0 companies and technology providers.</p>
+                            </div>
+                            <div class="achievement-card p-6 bg-opacity-20 bg-blue-900 rounded-lg">
+                                <h3 class="text-xl font-bold mb-2">Community Growth</h3>
+                                <p>Built a thriving community of tech enthusiasts, developers, and industry experts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-24">
+                    <h2 class="text-3xl font-bold mb-12 text-center">Future Vision</h2>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-6">
+                            <p class="text-lg">
+                                Our vision extends beyond traditional education. We aim to create a 
+                                self-sustaining ecosystem where learning, innovation, and opportunity 
+                                converge to shape the future of Web 3.0 technology in India and beyond.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-center">
+                                    <span class="text-blue-500 mr-2">→</span>
+                                    Expand our educational programs across India
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-blue-500 mr-2">→</span>
+                                    Launch innovative Web 3.0 projects and initiatives
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-blue-500 mr-2">→</span>
+                                    Foster global partnerships and collaborations
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="model-container" data-model="future-vision">
+                            <!-- 3D model will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Same footer content as index.html -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="animation.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>

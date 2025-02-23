@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domains - Cryptoholic</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Same navigation as other pages -->
+    <nav class="fixed w-full z-50 bg-opacity-90 bg-black">
+        <!-- Same navigation content -->
+    </nav>
+
+    <main class="pt-20">
+        <section class="min-h-screen relative">
+            <div class="container mx-auto px-6 py-24 relative z-10">
+                <h1 class="text-5xl font-bold mb-12 animate-fade-in">Our Domains</h1>
+                
+                <!-- Blockchain Domain -->
+                <div class="domain-section mb-32">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="model-container h-96" data-model="blockchain">
+                            <!-- 3D blockchain model will be rendered here -->
+                        </div>
+                        <div class="space-y-6">
+                            <h2 class="text-4xl font-bold mb-6">Blockchain Technology</h2>
+                            <p class="text-lg mb-6">
+                                Dive deep into the world of blockchain technology, from fundamental 
+                                concepts to advanced implementations. Learn about:
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>Smart Contracts Development</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>DeFi Protocols and Applications</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>Web3 Integration</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Domain -->
+                <div class="domain-section mb-32">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6 order-2 md:order-1">
+                            <h2 class="text-4xl font-bold mb-6">Artificial Intelligence</h2>
+                            <p class="text-lg mb-6">
+                                Explore the cutting-edge of AI technology and its applications in the Web3 space:
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>Machine Learning Models</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>Neural Networks</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>AI in Blockchain</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="model-container h-96 order-1 md:order-2" data-model="ai">
+                            <!-- 3D AI model will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metaverse Domain -->
+                <div class="domain-section mb-32">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="model-container h-96" data-model="metaverse">
+                            <!-- 3D metaverse model will be rendered here -->
+                        </div>
+                        <div class="space-y-6">
+                            <h2 class="text-4xl font-bold mb-6">Metaverse</h2>
+                            <p class="text-lg mb-6">
+                                Step into the future of digital interaction and virtual worlds:
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>Virtual Reality Development</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>Digital Asset Creation</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <span class="text-blue-500">●</span>
+                                    <span>Metaverse Platforms</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Learning Section -->
+                <div class="bg-opacity-20 bg-blue-900 rounded-2xl p-12 mb-24">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Interactive Learning Experience</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="feature-card">
+                            <h3 class="text-2xl font-bold mb-4">Hands-on Projects</h3>
+                            <p>Work on real-world projects with industry experts and fellow learners.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3 class="text-2xl font-bold mb-4">Expert Mentorship</h3>
+                            <p>Learn from experienced professionals in each domain.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3 class="text-2xl font-bold mb-4">Community Learning</h3>
+                            <p>Collaborate with peers and build your network in the Web3 space.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-12">
+        <!-- Same footer content -->
+    </footer>
+
+    <script src="animation.js"></script>
+    <script src="domains.js"></script>
+</body>
+</html>
