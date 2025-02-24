@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-black text-white">
     <canvas id="background-canvas"></canvas>
-    
+
     <nav class="fixed w-full z-50 bg-opacity-90 bg-black">
         <div class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
@@ -25,7 +27,8 @@
                 </div>
                 <button class="md:hidden menu-button">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -37,7 +40,7 @@
             <div class="container mx-auto px-6 py-24 relative z-10">
                 <h1 class="text-5xl md:text-7xl font-bold mb-8 animate-fade-in">
                     India's First Decentralized<br>
-                    <span class="text-blue-500">Web 3.0 Society</span>
+                    <span class="text-blue-500"></span>
                 </h1>
                 <p class="text-xl md:text-2xl mb-12 max-w-2xl">
                     Empowering tomorrow's tech leaders through Blockchain, AI, and Metaverse technologies.
@@ -117,8 +120,15 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('.text-blue-500', {
+            strings: ['Web 3.0 Society'],
+            typeSpeed: 50,
+        });
+    </script>
     <script src="animation.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
