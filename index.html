@@ -52,7 +52,7 @@
             </div>
         </section>
 
-        <section id="features" class="py-24">
+       <!--  <section id="features" class="py-24">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-16 text-center">Our Key Domains</h2>
                 <div class="grid md:grid-cols-3 gap-12">
@@ -82,6 +82,29 @@
                     </div>
                 </div>
             </div>
+        </section>
+        -->
+        <section id="features" class="carousel-container">
+            <h2>Our Key Domains</h2>
+            <div class="carousel" id="carousel">
+                <div class="feature-card">
+                    <img src="assets/new.jpg" alt="Blockchain">
+                    <h3>Blockchain</h3>
+                    <p>Master the fundamentals of blockchain technology and its applications in the real world.</p>
+                </div>
+                <div class="feature-card active">
+                    <img src="assets/new1.jpg" alt="AI">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Explore the cutting-edge developments in AI and machine learning.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/metaverse.jpg" alt="Metaverse">
+                    <h3>Metaverse</h3>
+                    <p>Dive into the future of digital interactions and virtual reality experiences.</p>
+                </div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
         </section>
 
         <!-- Additional sections... -->
@@ -127,6 +150,41 @@
             typeSpeed: 50,
         });
     </script>
+    <!-- Card Animation Script -->
+
+    <script>
+        let index = 1;
+        const cards = document.querySelectorAll('.feature-card');
+        const carousel = document.getElementById('carousel');
+    
+        function updateSlides() {
+            cards.forEach((card, i) => {
+                if (i === index) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+    
+            const cardWidth = 220; 
+            const offset = -(index * cardWidth - (carousel.parentElement.clientWidth / 2 - 150));
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+    
+        function nextSlide() {
+            index = (index + 1) % cards.length;
+            updateSlides();
+        }
+    
+        function prevSlide() {
+            index = (index - 1 + cards.length) % cards.length;
+            updateSlides();
+        }
+    
+        updateSlides();
+    </script>
+
+
     <script src="animation.js"></script>
     <script src="main.js"></script>
 </body>
