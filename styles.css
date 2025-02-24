@@ -126,3 +126,7 @@ body {
       margin-bottom: 2rem;
   }
 }
+.blockchain-pic{
+  position: relative;
+  top: -76px;
+}
