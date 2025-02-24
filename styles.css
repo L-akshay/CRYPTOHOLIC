@@ -127,6 +127,20 @@ body {
   }
 }
 .blockchain-pic{
+  height: 260px;
+  border-radius: 30px;
   position: relative;
-  top: -76px;
+  left: 61px;
+}
+.ai-image{
+  height: 260px;
+  border-radius: 30px;
+  position: relative;
+  left: 72px;
+}
+.metaverse-image{
+  height: 260px;
+  border-radius: 30px;
+  position: relative;
+  right: -22px;
 }
