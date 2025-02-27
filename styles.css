@@ -1,16 +1,17 @@
 :root {
-  --primary-color: #0055ff;
-  --secondary-color: #001133;
-  --background-color: #000000;
-  --text-color: #ffffff;
+  --primary-color: #0055ff;       /* no change */
+  --secondary-color: #001133;     /* no change */
+  --background-color: #000000;    /* no change */
+  --text-color: #ffffff;          /* no change */
 }
 
+/* Basic Body & Canvas Setup */
 body {
   margin: 0;
   background: var(--background-color);
   color: var(--text-color);
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 #background-canvas {
@@ -20,12 +21,14 @@ body {
   z-index: 0;
 }
 
+/* Navbar Link Effects */
 .nav-link {
   position: relative;
   color: var(--text-color);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
+  /* Added background-color transition */
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-link::after {
@@ -44,6 +47,7 @@ body {
   width: 100%;
 }
 
+/* Buttons */
 .btn-primary {
   background: var(--primary-color);
   color: var(--text-color);
@@ -55,12 +59,10 @@ body {
   border: none;
   cursor: pointer;
 }
-
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 85, 255, 0.4);
 }
-
 .btn-secondary {
   background: transparent;
   color: var(--text-color);
@@ -71,189 +73,25 @@ body {
   display: inline-block;
   border: 2px solid var(--primary-color);
 }
-
 .btn-secondary:hover {
   background: var(--primary-color);
   transform: translateY(-2px);
 }
 
-.feature-card {
-  background: rgba(0, 17, 51, 0.5);
-  border-radius: 1rem;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 85, 255, 0.2);
-}
-
-.icon-container {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 2rem;
-  position: relative;
-}
-
-.model-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
+/* Simple Fade-In Animation */
 @keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
 .animate-fade-in {
-  animation: fade-in 1s ease-out forwards;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .feature-card {
-    margin-bottom: 2rem;
-  }
-}
-
-.blockchain-pic {
-  height: 260px;
-  border-radius: 30px;
-  position: relative;
-  left: 61px;
-}
-
-.ai-image {
-  height: 260px;
-  border-radius: 30px;
-  position: relative;
-  left: 72px;
-}
-
-.metaverse-image {
-  height: 260px;
-  border-radius: 30px;
-  position: relative;
-  right: -22px;
-}
-
-/*Card Animation CSS*/
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Increased height for 'Our Key Domains' */
-.carousel-container {
-  position: relative;
-  width: 80%;
-  max-width: 900px;
-  margin: auto;
-  overflow: hidden;
-  text-align: center;
-  padding: 80px 0;
-  /* Increased height */
-}
-
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s ease-in-out;
-  gap: 20px;
-}
-
-.feature-card {
-  width: 200px;
-  min-height: 300px;
-  /* Adjusted to fit text properly */
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-  background: white;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease-in-out;
-  opacity: 0.7;
-  transform: scale(0.9);
-  display: flex;
-  flex-direction: column;
-  /* Ensure image, title, and text stack properly */
-  justify-content: space-between;
-}
-
-.feature-card.active {
-  width: 260px;
-  height: 320px;
-  opacity: 1;
-  transform: scale(1.1);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.feature-card img {
-  width: 100%;
-  height: 150px;
-  /* Reduce height to fit text properly */
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  margin-top: 10px;
-}
-
-.feature-card p {
-  font-size: 1rem;
-  color: gray;
-  padding: 0 10px;
-}
-
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 5px;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev:hover,
-.next:hover {
-  background: rgba(0, 0, 0, 0.8);
+  /* Slightly increased the duration from 1s to 1.2s */
+  animation: fade-in 1.2s ease-out forwards;
 }
 
 /* Styling for Title */
@@ -335,32 +173,6 @@ h2 {
   z-index: -2;
   box-shadow: inset 0px 0px 180px 5px #ffffff;
 }
-button {
-  padding: 1.3em 3em;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-}
-
-button:hover {
-  background-color: #23c483;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-button:active {
-  transform: translateY(-1px);
-}
 
 .main {
   display: flex;
@@ -369,65 +181,35 @@ button:active {
   align-items: center;
   justify-content: center;
   z-index: -1;
+  position: relative;
 }
-
 .card {
   width: 60px;
   height: 60px;
   border-top-left-radius: 10px;
-  background: lightgrey;
-  transition: .4s ease-in-out, .2s background-color ease-in-out, .2s background-image ease-in-out;
   background: rgba(255, 255, 255, 0.596);
   backdrop-filter: blur(5px);
   border: 1px solid transparent;
   -webkit-backdrop-filter: blur(5px);
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
 }
-
-.card .instagram {
+.card svg {
   opacity: 0;
-  transition: .2s ease-in-out;
-  fill: #cc39a4;
+  transition: 0.2s ease-in-out;
 }
-
-.card:nth-child(2) {
-  border-radius: 0px;
+.main_back {
+  position: absolute;
+  border-radius: 10px;
+  transform: rotate(90deg);
+  width: 11em;
+  height: 11em;
+  background: linear-gradient(270deg, #03a9f4, #cc39a4, #ffb5d2);
+  z-index: -2;
+  box-shadow: inset 0px 0px 180px 5px #ffffff;
 }
-
-.card:nth-child(2) .twitter {
-  opacity: 0;
-  transition: .2s ease-in-out;
-  fill: #03A9F4;
-}
-
-.card:nth-child(3) {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 0px;
-}
-
-.card:nth-child(3) .dribble {
-  opacity: 0;
-  transition: .2s ease-in-out;
-  fill: #ffb5d2;
-}
-
-.card:nth-child(4) {
-  border-radius: 0px;
-}
-
-.card:nth-child(4) .codepen {
-  opacity: 0;
-  transition: .2s ease-in-out;
-  fill: black;
-}
-
-.card:nth-child(5) {
-  border-radius: 0px;
-}
-
-.card:nth-child(5) .uiverse {
+.text {
   position: absolute;
   margin-left: 0.2em;
   margin-top: 0.2em;
@@ -455,9 +237,6 @@ button:active {
   transition: .2s ease-in-out;
   fill: black;
 }
-.testimonial{
-  border-radius: 30px;
-}
 
 .card:nth-child(8) {
   border-radius: 0px;
@@ -478,219 +257,185 @@ button:active {
   opacity: 0;
   transition: .2s ease-in-out;
 }
-
 .main:hover {
   width: 14em;
   cursor: pointer;
 }
-
 .main:hover .main_back {
   opacity: 0;
 }
-
 .main:hover .card {
-  margin: .2em;
+  margin: 0.2em;
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.2);
+  /* Added a slight scale on hover */
+  transform: scale(1.05);
 }
-
-.main:hover .card:nth-child(5) {
-  border: transparent;
-}
-
 .main:hover .text {
   opacity: 0;
   z-index: -3;
 }
-
-.main:hover .instagram {
+.main:hover .card svg {
   opacity: 1;
 }
 
-.main:hover .twitter {
-  opacity: 1;
-}
-
-.main:hover .dribble {
-  opacity: 1;
-}
-
-.main:hover .codepen {
-  opacity: 1;
-}
-
-.main:hover .uiverse {
-  opacity: 1;
-}
-
-.main:hover .discord {
-  opacity: 1;
-}
-
-.main:hover .github {
-  opacity: 1;
-}
-
-.main:hover .telegram {
-  opacity: 1;
-}
-
-.main:hover .reddit {
-  opacity: 1;
-}
-
+/* Example Hover Colors (slightly tweaked) */
 .card:nth-child(1):hover {
-  background-color: #cc39a4;
+  background-color: #cc3399; /* was #cc39a4 */
 }
-
 .card:nth-child(1):hover .instagram {
   fill: white;
 }
-
 .card:nth-child(2):hover {
-  background-color: #03A9F4;
+  background-color: #039be5; /* was #03a9f4 */
 }
-
 .card:nth-child(2):hover .twitter {
   fill: white;
 }
-
 .card:nth-child(3):hover {
   background-color: #ffb5d2;
 }
-
 .card:nth-child(3):hover .dribble {
   fill: white;
 }
-
 .card:nth-child(4):hover {
-  background-color: #1E1F26;
+  background-color: #1e1f26;
 }
-
 .card:nth-child(4):hover .codepen {
   fill: white;
 }
-
 .card:nth-child(5):hover {
-  animation: backgroundIMG .1s;
-  animation-fill-mode: forwards;
+  animation: backgroundIMG 0.1s forwards;
 }
-
-.card:nth-child(5):hover .uiverse #paint0_linear_501_142 stop {
-  stop-color: white;
-}
-
-.card:nth-child(5):hover .uiverse #paint1_linear_501_142 stop {
-  stop-color: white;
-}
-
-.card:nth-child(5):hover .uiverse #paint2_linear_501_142 stop {
-  stop-color: white;
-}
-
 @keyframes backgroundIMG {
   100% {
-    background-image: linear-gradient(#BF66FF,#6248FF,#00DDEB);
+    background-image: linear-gradient(#bf66ff, #6248ff, #00ddeb);
   }
 }
-
 .card:nth-child(6):hover {
   background-color: #8c9eff;
 }
-
 .card:nth-child(6):hover .discord {
   fill: white;
 }
-
 .card:nth-child(7):hover {
   background-color: black;
 }
-
 .card:nth-child(7):hover .github {
   fill: white;
 }
-
 .card:nth-child(8):hover {
   background-color: #29b6f6;
 }
-
 .card:nth-child(8):hover .telegram > path:nth-of-type(1) {
   fill: white;
 }
-
-.card:nth-child(8):hover .telegram > path:nth-of-type(2) {
-  fill: #29b6f6;
-}
-
+.card:nth-child(8):hover .telegram > path:nth-of-type(2),
 .card:nth-child(8):hover .telegram > path:nth-of-type(3) {
   fill: #29b6f6;
 }
-
 .card:nth-child(9):hover {
-  background-color: rgb(255,69,0);
+  background-color: rgb(255, 69, 0);
 }
-
 .card:nth-child(9) .reddit > g circle {
-  fill: rgb(255,69,0);
+  fill: rgb(255, 69, 0);
 }
-
 .card:nth-child(9) .reddit > g path {
   fill: white;
 }
 
-.text {
+/* ====== Marquee for Sponsors ====== */
+.marquee {
+  display: flex;
+  /* Slightly increased top/bottom margin for neat spacing */
+  margin-block: 1.5rem;
+  position: relative;
+  overflow-x: hidden;
+  /* Fade edges more gently */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+.marquee--3 {
+  --marquee-item-width: 120px;
+  --marquee-item-height: 120px;
+  /* Reduced duration for a faster scroll */
+  --marquee-duration: 20s;
+  --marquee-items: 10;
+}
+.marquee__item {
+  --marquee-item-offset: max(
+    calc(var(--marquee-item-width) * var(--marquee-items)),
+    calc(100% + var(--marquee-item-width))
+  );
+  --marquee-delay: calc(
+    var(--marquee-duration) / var(--marquee-items)
+    * (var(--marquee-items) - var(--marquee-item-index))
+    * -1
+  );
   position: absolute;
-  font-size: 0.7em;
-  transition: .4s ease-in-out;
-  color: black;
-  text-align: center;
-  font-weight: bold;
-  letter-spacing: 0.33em;
-  z-index: 3;
+  inset-inline-start: var(--marquee-item-offset);
+  transform: translateX(-50%);
+  animation: go linear var(--marquee-duration) var(--marquee-delay, 0s) infinite;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 }
-
-
-
-
-.marquee--3 .marquee__item:nth-of-type(1) {
-  --marquee-item-index: 1;
-}
-
-.marquee--3 .marquee__item:nth-of-type(2) {
-  --marquee-item-index: 2;
-}
-
-.marquee--3 .marquee__item:nth-of-type(3) {
-  --marquee-item-index: 3;
-}
-
-
 @keyframes go {
-  to {  
+  to {
     inset-inline-start: calc(var(--marquee-item-width) * -1);
   }
 }
+/* Index each sponsor item */
+.marquee__item:nth-of-type(1) {
+  --marquee-item-index: 1;
+}
+.marquee__item:nth-of-type(2) {
+  --marquee-item-index: 2;
+}
+.marquee__item:nth-of-type(3) {
+  --marquee-item-index: 3;
+}
+.marquee__item:nth-of-type(4) {
+  --marquee-item-index: 4;
+}
+.marquee__item:nth-of-type(5) {
+  --marquee-item-index: 5;
+}
+.marquee__item:nth-of-type(6) {
+  --marquee-item-index: 6;
+}
+.marquee__item:nth-of-type(7) {
+  --marquee-item-index: 7;
+}
+.marquee__item:nth-of-type(8) {
+  --marquee-item-index: 8;
+}
+.marquee__item:nth-of-type(9) {
+  --marquee-item-index: 9;
+}
+.marquee__item:nth-of-type(10) {
+  --marquee-item-index: 10;
+}
+
+/* ====== Influencer Card Example ====== */
 .e-card1 {
   margin: 100px auto;
-  background-image: url(assets/ungraduate-gamer.jpg);
-  box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+  background-image: url("assets/ungraduate-gamer.jpg");
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
   position: relative;
   width: 240px;
   height: 330px;
-  border-radius: 16px;
+  /* Slightly more rounded corners */
+  border-radius: 20px;
   overflow: hidden;
 }
-
-
-
-.icon {
-  width: 3em;
-  margin-top: -1em;
-  padding-bottom: 1em;
-}
-
 .infotop {
   text-align: center;
   font-size: 20px;
@@ -701,53 +446,47 @@ button:active {
   color: rgb(255, 255, 255);
   font-weight: 600;
 }
-
-.name {
-  font-size: 14px;
-  font-weight: 100;
-  position: relative;
-  top: 1em;
-  text-transform: lowercase;
-}
-
-.wave:nth-child(2),
-.wave:nth-child(3) {
-  top: 210px;
-}
-
-.playing .wave {
-  border-radius: 40%;
-  animation: wave 3000ms infinite linear;
-}
-
 .wave {
   border-radius: 40%;
-  animation: wave 55s infinite linear;
+  animation: wave 60s infinite linear; /* was 55s */
+  position: absolute;
+  top: 210px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
-
-.playing .wave:nth-child(2) {
-  animation-duration: 4000ms;
-}
-
-.wave:nth-child(2) {
-  animation-duration: 50s;
-}
-
-.playing .wave:nth-child(3) {
-  animation-duration: 5000ms;
-}
-
-.wave:nth-child(3) {
-  animation-duration: 45s;
-}
-
 @keyframes wave {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
+  }
+}
+.playing .wave {
+  animation: wave 3000ms infinite linear;
+}
+.playing .wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+
+/* Responsive design tweaks */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  .feature-card {
+    margin-bottom: 2rem;
+  }
+  .logo {
+    width: 100px;
   }
 }
 .vision-container {
