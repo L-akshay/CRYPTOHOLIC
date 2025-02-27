@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cryptoholic Society - Rewards Page</title>
+  <!-- ====== Basic Styling ====== -->
+  <style>
+    /* Reset some default browser styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: #000; /* Dark background */
+      font-family: "Arial", sans-serif;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      color: #fff;
+    }
+
+    /* ====== Particle Canvas ====== */
+    #background-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ====== Main Content Container ====== */
+    .content-container {
+      position: relative;
+      z-index: 1; /* Ensure content sits above the canvas */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    /* Floating Header Animation */
+    .header-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #00aaff;
+      animation: floatingEffect 3s ease-in-out infinite;
+      text-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
+    }
+
+    @keyframes floatingEffect {
+      0% {
+        transform: translateY(0);
+        text-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
+      }
+      50% {
+        transform: translateY(-15px);
+        text-shadow: 0 0 20px rgba(0, 170, 255, 1);
+      }
+      100% {
+        transform: translateY(0);
+        text-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
+      }
+    }
+
+    /* Card Animations */
+    .section {
+      margin-bottom: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .section:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .section:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    .section:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+    /* This ensures our new (5th) section fades in a bit later */
+    .section:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+
+    .section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 170, 255, 0.5);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #00aaff;
+      border-bottom: 1px solid #00aaff;
+      padding-bottom: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00ffaa, transparent);
+      animation: borderGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes borderGlow {
+      0% {
+        left: -100%;
+      }
+      50% {
+        left: 100%;
+      }
+      100% {
+        left: -100%;
+      }
+    }
+
+    .section p,
+    .section li {
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+      color: #ddd;
+    }
+
+    .section ul {
+      list-style: disc;
+      margin-left: 2rem;
+    }
+
+    .highlight {
+      color: #00ffaa;
+      font-weight: bold;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px rgba(0, 255, 170, 0.5);
+      }
+      to {
+        text-shadow: 0 0 10px rgba(0, 255, 170, 1);
+      }
+    }
+
+    /* Small screen adjustments */
+    @media (max-width: 768px) {
+      .header-title {
+        font-size: 2rem;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particle Background Canvas -->
+  <canvas id="background-canvas"></canvas>
+
+  <!-- Main Content -->
+  <div class="content-container">
+    <h1 class="header-title">Cryptoholic Society Rewards</h1>
+
+    <!-- Introduction Section -->
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>
+        Cryptoholic Society is India's first decentralized Web 3.0 society, offering education on
+        blockchain, AI, digital currencies, NFTs, and the Metaverse. Our aim is to equip members
+        with knowledge of these innovative technologies while creating networking opportunities
+        with global Web 3.0 companies.
+      </p>
+      <p>
+        This page outlines our <span class="highlight">Participation Points System</span>, 
+        <span class="highlight">Rewards</span>, and <span class="highlight">Removal Policy</span>. 
+        Let's foster healthy competition, accountability, and active involvement within our 
+        thriving Web 3.0 community.
+      </p>
+    </div>
+
+    <!-- Objectives Section -->
+    <div class="section">
+      <h2>Objectives</h2>
+      <ul>
+        <li>Promote Active Participation</li>
+        <li>Reward Positive Contributions</li>
+        <li>Maintain Accountability</li>
+        <li>Create Opportunities for Recognition</li>
+        <li>Foster Healthy Competition</li>
+      </ul>
+    </div>
+
+    <!-- Participation Points System Section -->
+    <div class="section">
+      <h2>Participation Points System</h2>
+      <p>
+        Our token reward system motivates and rewards active involvement and teamwork 
+        within the community. Here's how you can earn points:
+      </p>
+
+      <ul>
+        <li><strong>Online Meetings</strong>
+          <ul>
+            <li>Attend Online Meet: <span class="highlight">+1</span> point</li>
+            <li>Random Snapshot of Meet: <span class="highlight">+1</span> point</li>
+            <li>Q&A Session (Positive Response): <span class="highlight">+2</span> points</li>
+          </ul>
+        </li>
+        <li><strong>Offline Meetings</strong>
+          <ul>
+            <li>Attend Offline Meet: <span class="highlight">+1</span> point</li>
+            <li>Work Performance (Positive Response): <span class="highlight">+10</span> or <span class="highlight">+5</span> points</li>
+          </ul>
+        </li>
+        <li><strong>Work Performance Bonuses</strong>
+          <ul>
+            <li>Nice Work (General): <span class="highlight">+3</span> points</li>
+            <li>Nice Work (Offline): <span class="highlight">+5</span> points</li>
+            <li>Sponsored Collaboration (Company/Project): <span class="highlight">+30</span> points</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Negative Marking & Removal Policy Section -->
+    <div class="section">
+      <h2>❌ Negative Marking and 🚫Removal Policy</h2>
+      <h3>Less Than -50 Points</h3>
+      <p>
+        Any member accumulating fewer than -50 points will be automatically removed from
+        the society’s core teams, maintaining high standards of accountability and active
+        engagement. ⚠️❗🚫
+      </p>
+    </div>
+  </div>
+
+  <!-- ====== Scripts ====== -->
+  <!-- 1) Three.js (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.139.2/build/three.min.js"></script>
+  <!-- 2) GSAP (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.5/dist/gsap.min.js"></script>
+
+  <script>
+    /* =============================
+       THREE.js Particle Background
+       ============================= */
+    let scene, camera, renderer, particles;
+
+    function init() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+
+      renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector('#background-canvas'),
+        antialias: true,
+        alpha: true
+      });
+
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+
+      // Create particle system
+      const particlesGeometry = new THREE.BufferGeometry();
+      const particlesCnt = 5000;
+      const posArray = new Float32Array(particlesCnt * 3);
+
+      for (let i = 0; i < particlesCnt * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 5;
+      }
+
+      particlesGeometry.setAttribute(
+        'position',
+        new THREE.BufferAttribute(posArray, 3)
+      );
+
+      const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.005,
+        color: '#00aaff',
+        blending: THREE.AdditiveBlending
+      });
+
+      particles = new THREE.Points(particlesGeometry, particlesMaterial);
+      scene.add(particles);
+
+      camera.position.z = 2;
+
+      // Add ambient light
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      scene.add(ambientLight);
+
+      // Add point light
+      const pointLight = new THREE.PointLight(0x00aaff, 0.5);
+      pointLight.position.set(2, 3, 4);
+      scene.add(pointLight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Subtle rotation for the particle system
+      particles.rotation.x += 0.0001;
+      particles.rotation.y += 0.0002;
+
+      // Respond to scroll
+      const scrollPosition = window.pageYOffset;
+      particles.rotation.z = scrollPosition * 0.0001;
+
+      renderer.render(scene, camera);
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', onWindowResize, false);
+
+    // Initialize scene
+    init();
+    animate();
+
+    // GSAP Scroll animation
+    document.addEventListener('scroll', () => {
+      const scrollPosition = window.pageYOffset;
+      gsap.to(particles.rotation, {
+        duration: 2,
+        y: scrollPosition * 0.0002,
+        ease: "power2.out"
+      });
+    });
+  </script>
+
+  <script>
+    /* ===============================
+       Hover Effect for Sections
+       =============================== */
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section');
+      
+      document.addEventListener('mousemove', function(e) {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (
+            e.clientX > rect.left && e.clientX < rect.right && 
+            e.clientY > rect.top && e.clientY < rect.bottom
+          ) {
+            const xOffset = (x - 0.5) * 10;
+            const yOffset = (y - 0.5) * 10;
+            section.style.transform =
+              `perspective(1000px) rotateX(${yOffset}deg) rotateY(${xOffset}deg) translateY(-10px)`;
+          } else {
+            section.style.transform = '';
+          }
+        });
+      });
+      
+      // Reset when mouse leaves the document
+      document.addEventListener('mouseleave', function() {
+        sections.forEach(section => {
+          section.style.transform = '';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
