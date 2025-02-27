@@ -29,7 +29,7 @@ body {
 }
 
 .nav-link::after {
-  content: '';
+  /* content: ''; */
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -335,6 +335,32 @@ h2 {
   z-index: -2;
   box-shadow: inset 0px 0px 180px 5px #ffffff;
 }
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
 
 .main {
   display: flex;
@@ -428,6 +454,9 @@ h2 {
   opacity: 0;
   transition: .2s ease-in-out;
   fill: black;
+}
+.testimonial{
+  border-radius: 30px;
 }
 
 .card:nth-child(8) {
@@ -720,4 +749,152 @@ h2 {
   100% {
     transform: rotate(360deg);
   }
+}
+.vision-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/****************************************
+ * 1) Left Sidebar
+ ****************************************/
+.vision-sidebar {
+  flex: 0 0 200px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,170,255,0.05);
+}
+.vision-sidebar h2 {
+  font-size: 1.2rem;
+  color: #00aaff;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.nav-icons {
+  list-style: none;
+  padding-left: 0;
+}
+.nav-icons li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+.nav-icons li .icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/****************************************
+ * 2) Middle Card (/VIBE)
+ ****************************************/
+.vibe-card {
+  flex: 1; /* take remaining space */
+  min-width: 220px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,170,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.vibe-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #00aaff;
+  text-transform: uppercase;
+}
+.vibe-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+.vibe-card a {
+  color: #00ffaa;
+  text-decoration: none;
+  font-weight: bold;
+}
+.vibe-card a:hover {
+  text-decoration: underline;
+}
+
+/****************************************
+ * 3) Right Card (Attendees)
+ ****************************************/
+.attendees-card {
+  flex: 0 0 280px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,170,255,0.05);
+  position: relative;
+  min-width: 240px;
+}
+/* Header with title & date */
+.attendees-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.attendees-header h3 {
+  font-size: 1.1rem;
+  color: #00ffaa;
+  margin-right: 1rem;
+  text-transform: uppercase;
+}
+.attendees-header span {
+  font-size: 0.9rem;
+  color: #999;
+}
+/* Body with Attendee list */
+.attendees-body p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+.attendees-list {
+  list-style: none;
+  padding-left: 0;
+  max-height: 200px; /* Scroll if many attendees */
+  overflow-y: auto;
+}
+.attendees-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.attendee-avatar {
+  width: 32px; 
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+.attendee-avatar img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+}
+.attendee-name {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #fff;
+}
+.attendee-addr {
+  color: #888;
+  font-size: 0.85rem;
 }
