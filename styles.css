@@ -13,7 +13,9 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
-
+.review2{
+  width: 50%;
+}
 #background-canvas {
   position: fixed;
   top: 0;
